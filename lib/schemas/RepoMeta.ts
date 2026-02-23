@@ -3,9 +3,12 @@ import { $schema } from './utils.ts'
 type ParcelPath = string
 
 /**
- * RepoMeta is the schema for the meta file of a Git Parcel repository.
+ * The meta file of a Git Parcel repository.
  *
- * It lists all parcels in the repository.
+ * This file:
+ * 
+ * - should be in the root directory of the repository.
+ * - lists all the parcels in this repository.
  */
 export type RepoMeta = $schema & {
   /**
