@@ -2,12 +2,12 @@ type $schema = {
   $schema?: string
 }
 
-export type ParcelFormat = {
+type ParcelFormat = {
   id: string
   version: number
 }
 
-export type ModDependency = {
+type ModDependency = {
   id: string
   /** Minimum version (SemVer) */
   min?: string
@@ -44,6 +44,39 @@ export type ParcelMeta = $schema & {
   includeEntity?: boolean
 }
 
+type ParcelPath = string
+
 export type RepoMeta = $schema & {
+  /**
+   * List of path to parcels, relative to this meta file
+   *
+   * ### Example
+   *
+   * Repo directory structure:
+   *
+   * ```
+   * repo/
+   * ├─ houses/
+   * │  ├─ alice_house/
+   * │  │  └─ *
+   * │  └─ bob_house/
+   * │     └─ *
+   * └─ common/
+   *    └─ bus_station/
+   *       └─ *
+   * ```
+   *
+   * You can write it like this:
+   *
+   * ```json
+   * {
+   *   "parcels": [
+   *     "houses/alice_house",
+   *     "houses/bob_house",
+   *     "common/bus_station"
+   *   ]
+   * }
+   * ```
+   */
   parcels: string[]
 }
