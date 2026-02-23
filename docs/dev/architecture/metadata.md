@@ -1,50 +1,49 @@
-### Parcel 和仓库的元数据
+# Parcel 和仓库的元数据
 
 ```ts
 export type ParcelFormat = {
-    id: string;
-    version: number;
+  id: string
+  version: number
 }
 
 export type ModDependency = {
-  id: string;
+  id: string
   /** Minimum version (SemVer) */
-  min?: string;
+  min?: string
   /** Maximum version (SemVer) */
-  max?: string;
-};
+  max?: string
+}
 
 export type ParcelMeta = {
   /** The format of parcel */
-  format: ParcelFormat;
+  format: ParcelFormat
   /** Minecraft data version */
-  dataVersion: number;
+  dataVersion: number
   /** Size of parcel in X,Y,Z */
-  size: [number, number, number];
-  name?: string;
-  description?: string;
+  size: [number, number, number]
+  name?: string
+  description?: string
   /** Tags for searching */
-  tags?: string[];
+  tags?: string[]
   /**
    * List of mods that are allowed to be used in the parcel
    */
-  mods?: ModDependency[];
+  mods?: ModDependency[]
   /**
    * Whether to include blocks
    *
    * @default true
    */
-  includeBlock?: boolean;
+  includeBlock?: boolean
   /**
    * Whether to include entities
    *
    * @default false
    */
-  includeEntity?: boolean;
-};
+  includeEntity?: boolean
+}
 
 export type RepoMeta = {
-  parcels: string[];
-};
-
+  parcels: string[]
+}
 ```
