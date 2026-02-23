@@ -2,6 +2,9 @@
 .idea/
 .vscode/
 
+# Obsidian
+.obsidian/
+
 # AI Tools
 .lingma/
 .trae/
